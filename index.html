@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Cumpleaños N° 70 - Luz ✨</title>
+
+  <!-- Tipografías de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-white: #F8F3EA;
+      --bg-beige: #EFE7D8;
+      --terracotta-red: #8C1D18;
+      --dark-brown: #5C2D16;
+      --gold: #C9A55B;
+      --sage-green: #5A7052;
+      --text-main: #4A2E1B;
+      --font-title: 'Cormorant Garamond', serif;
+      --font-body: 'Montserrat', sans-serif;
+      --font-accent: 'Great Vibes', cursive;
+      --font-cinzel: 'Cinzel', serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #1a1a1a;
+      color: var(--text-main);
+      font-family: var(--font-body);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* PANTALLA DE INTRODUCCIÓN */
+    #intro-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background-color: var(--bg-white);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 15px;
+      overflow-y: auto;
+      transition: opacity 1.2s ease, visibility 1.2s;
+    }
+
+    .intro-text {
+      font-family: var(--font-title);
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: var(--terracotta-red);
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      position: absolute;
+      max-width: 85%;
+      line-height: 1.4;
+    }
+
+    .framed-card {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      height: calc(100% - 30px);
+      max-height: 750px;
+      min-height: 520px;
+      background-color: var(--bg-beige);
+      border-radius: 20px;
+      padding: clamp(25px, 5vh, 50px) clamp(20px, 5vw, 35px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1.5s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .svg-frame {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .content-header, .content-body, .content-footer {
+      position: relative;
+      z-index: 2;
+    }
+
+    .content-header { margin-top: clamp(10px, 2vh, 25px); }
+    .content-footer { margin-bottom: clamp(10px, 2vh, 20px); }
+
+    .family-prefix {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: var(--dark-brown);
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+
+    .family-name {
+      font-family: var(--font-accent);
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      color: var(--dark-brown);
+      line-height: 1.1;
+      margin: 2px 0 4px 0;
+    }
+
+    .invitation-phrase {
+      font-size: clamp(0.7rem, 2vw, 0.85rem);
+      color: var(--dark-brown);
+      line-height: 1.3;
+      font-weight: 400;
+    }
+
+    .arc-text-container {
+      font-family: var(--font-cinzel);
+      font-size: clamp(0.95rem, 3vw, 1.25rem);
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--terracotta-red);
+      margin-top: 4px;
+    }
+
+    .number-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 4px 0;
+    }
+
+    .heart-icon {
+      width: clamp(14px, 2vw, 18px);
+      height: auto;
+      fill: var(--terracotta-red);
+    }
+
+    .number-70 {
+      font-family: var(--font-cinzel);
+      font-size: clamp(3rem, 10vw, 4.5rem);
+      font-weight: 700;
+      color: var(--terracotta-red);
+      line-height: 0.95;
+    }
+
+    .mother-phrase {
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      color: var(--dark-brown);
+      margin-top: 2px;
+    }
+
+    .hero-name-luz {
+      font-family: var(--font-cinzel);
+      font-size: clamp(2.2rem, 7vw, 3rem);
+      font-weight: 700;
+      color: var(--terracotta-red);
+      letter-spacing: 4px;
+      line-height: 1;
+      margin-top: 4px;
+    }
+
+    .btn-enter {
+      padding: clamp(8px, 1.5vh, 12px) clamp(28px, 6vw, 40px);
+      border: 1.5px solid var(--terracotta-red);
+      background: var(--bg-beige);
+      color: var(--terracotta-red);
+      font-family: var(--font-body);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+    }
+
+    .btn-enter:hover {
+      background-color: var(--terracotta-red);
+      color: #FFF;
+      box-shadow: 0 4px 15px rgba(140, 29, 24, 0.3);
+    }
+
+    /* CONTENEDOR PRINCIPAL POST-INTRO */
+    #main-content {
+      background-color: var(--bg-white);
+      min-height: 100vh;
+    }
+
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(248, 243, 234, 0.9);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .bar-btn {
+      background: none;
+      border: 1px solid var(--terracotta-red);
+      color: var(--terracotta-red);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-family: var(--font-body);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.3s ease;
+    }
+
+    .bar-btn:hover {
+      background-color: var(--terracotta-red);
+      color: #FFF;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      padding-top: 90px;
+      max-width: 650px;
+      margin: 0 auto;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 50px;
+    }
+
+    section {
+      margin-bottom: 45px;
+      text-align: center;
+    }
+
+    .hero-title-main {
+      font-family: var(--font-cinzel);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--terracotta-red);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 4px rgba(201, 165, 91, 0.2);
+      margin-bottom: 6px;
+    }
+
+    .hero-date-sub {
+      font-family: var(--font-title);
+      font-size: clamp(1.2rem, 3.8vw, 1.6rem);
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 1px;
+      margin-bottom: 25px;
+    }
+
+    .floral-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 35px 0;
+    }
+
+    .floral-divider svg {
+      width: 160px;
+      height: 30px;
+      fill: var(--sage-green);
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--terracotta-red);
+      margin-bottom: 15px;
+    }
+
+    .countdown-container {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      background: var(--bg-beige);
+      padding: 18px 12px;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    }
+
+    .time-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .time-number {
+      font-family: var(--font-title);
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 600;
+      color: var(--terracotta-red);
+      line-height: 1;
+    }
+
+    .time-label {
+      font-size: clamp(0.55rem, 1.8vw, 0.7rem);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--dark-brown);
+      margin-top: 6px;
+    }
+
+    .intro-quote {
+      font-family: var(--font-title);
+      font-size: clamp(1.15rem, 3.5vw, 1.4rem);
+      font-style: italic;
+      color: var(--dark-brown);
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    /* ANIMACIÓN SCROLL REVEAL */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card {
+      background: #FFFFFF;
+      border: 1px solid var(--bg-beige);
+      border-radius: 16px;
+      padding: 25px 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+    }
+
+    .card-icon {
+      font-size: 1.8rem;
+      margin-bottom: 8px;
+    }
+
+    .card-title {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      color: var(--terracotta-red);
+      margin-bottom: 5px;
+    }
+
+    .card-time {
+      font-size: 0.95rem;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .card-location {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    .btn-map {
+      display: inline-block;
+      text-decoration: none;
+      padding: 10px 24px;
+      background-color: var(--sage-green);
+      color: #FFF;
+      border-radius: 25px;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-map:hover {
+      background-color: #485b41;
+      box-shadow: 0 4px 12px rgba(90, 112, 82, 0.4);
+    }
+
+    .dresscode-card {
+      background: var(--bg-beige);
+      border-radius: 16px;
+      padding: 25px 20px;
+      border: 1px solid rgba(140, 29, 24, 0.2);
+    }
+
+    .dresscode-tag {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      color: var(--terracotta-red);
+      margin-bottom: 10px;
+    }
+
+    .dresscode-desc {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--dark-brown);
+      margin-bottom: 12px;
+    }
+
+    .dresscode-hint {
+      font-size: 0.8rem;
+      font-style: italic;
+      color: var(--terracotta-red);
+    }
+
+    /* CARRUSEL DE FOTOS RESPONSIVO */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 15px auto 0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      background-color: #1a1a1a;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      width: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      height: clamp(380px, 60vh, 520px);
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .carousel-slide-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(15px) brightness(0.6);
+      transform: scale(1.1);
+    }
+
+    .carousel-slide img.main-img {
+      position: relative;
+      z-index: 2;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      border-radius: 4px;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      backdrop-filter: blur(4px);
+      transition: all 0.3s;
+    }
+
+    .carousel-btn.prev { left: 10px; }
+    .carousel-btn.next { right: 10px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ddd;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .dot.active {
+      background-color: var(--terracotta-red);
+      transform: scale(1.25);
+    }
+
+    /* LIGHTBOX */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.9);
+      z-index: 3000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 15px;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 85vh;
+      border-radius: 8px;
+      object-fit: contain;
+    }
+
+    /* RSVP WA & FORMULARIO */
+    .rsvp-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 25px 20px;
+      border: 1px solid var(--bg-beige);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+      text-align: left;
+    }
+
+    .rsvp-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      display: block;
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px 15px;
+      border: 1px solid var(--bg-beige);
+      background: var(--bg-white);
+      border-radius: 8px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--text-main);
+      outline: none;
+    }
+
+    .status-box {
+      margin-top: 10px;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      display: none;
+    }
+
+    .status-confirmed {
+      background-color: #D1FAE5;
+      color: #065F46;
+      border: 1px solid #A7F3D0;
+      display: block;
+    }
+
+    .status-pending {
+      background-color: #FEF3C7;
+      color: #92400E;
+      border: 1px solid #FDE68A;
+      display: block;
+    }
+
+    .btn-whatsapp {
+      width: 100%;
+      padding: 14px;
+      background-color: #25D366;
+      color: #FFF;
+      border: none;
+      border-radius: 25px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 5px;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #20ba5a;
+    }
+
+    @media (min-width: 768px) {
+      main { max-width: 680px; }
+      .card, .dresscode-card, .rsvp-card { padding: 35px 30px; }
+      .countdown-container { padding: 25px; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PANTALLA DE INTRODUCCIÓN CON MARCO SVG DINÁMICO -->
+  <div id="intro-screen">
+    <div id="phrase-1" class="intro-text">Hay personas...</div>
+    <div id="phrase-2" class="intro-text">...que hacen de la vida un lugar más bonito.</div>
+    
+    <div id="hero-content" class="framed-card">
+      <svg class="svg-frame" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <rect x="2" y="2" width="96" height="96" rx="5" ry="5" fill="none" stroke="#C9A55B" stroke-width="0.8" />
+        <rect x="4" y="4" width="92" height="92" rx="4" ry="4" fill="none" stroke="#8C1D18" stroke-width="0.4" stroke-dasharray="2, 1" />
+        <path d="M 2 12 Q 12 12 12 2" fill="none" stroke="#8C1D18" stroke-width="1" />
+        <circle cx="7" cy="7" r="1.5" fill="#5A7052" />
+        <path d="M 98 12 Q 88 12 88 2" fill="none" stroke="#8C1D18" stroke-width="1" />
+        <circle cx="93" cy="7" r="1.5" fill="#5A7052" />
+        <path d="M 2 88 Q 12 88 12 98" fill="none" stroke="#8C1D18" stroke-width="1" />
+        <circle cx="7" cy="93" r="1.5" fill="#5A7052" />
+        <path d="M 98 88 Q 88 88 88 98" fill="none" stroke="#8C1D18" stroke-width="1" />
+        <circle cx="93" cy="93" r="1.5" fill="#5A7052" />
+        <path d="M 45 3 Q 50 1 55 3 Q 50 5 45 3 Z" fill="#8C1D18" />
+        <circle cx="42" cy="3" r="0.8" fill="#C9A55B" />
+        <circle cx="58" cy="3" r="0.8" fill="#C9A55B" />
+        <path d="M 45 97 Q 50 95 55 97 Q 50 99 45 97 Z" fill="#8C1D18" />
+        <circle cx="42" cy="97" r="0.8" fill="#C9A55B" />
+        <circle cx="58" cy="97" r="0.8" fill="#C9A55B" />
+      </svg>
+
+      <div class="content-header">
+        <p class="family-prefix">La Familia</p>
+        <h1 class="family-name">Rosas González</h1>
+        <p class="invitation-phrase">
+          tenemos el honor de invitarlos<br>a la celebración del
+        </p>
+      </div>
+
+      <div class="content-body">
+        <h2 class="arc-text-container">CUMPLEAÑOS</h2>
+        
+        <div class="number-container">
+          <svg class="heart-icon" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+
+          <span class="number-70">70</span>
+
+          <svg class="heart-icon" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+        </div>
+
+        <p class="mother-phrase">de nuestra mamá</p>
+        <h2 class="hero-name-luz">LUZ</h2>
+      </div>
+
+      <div class="content-footer">
+        <button class="btn-enter" onclick="startExperience()">✨ Entrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <header class="top-bar">
+      <button class="bar-btn" id="music-btn" onclick="toggleAudio()">
+        🎵 <span id="music-text">Música</span>
+      </button>
+      <button class="bar-btn" onclick="addToCalendar()">
+        📅 Agendar
+      </button>
+    </header>
+
+    <audio id="bg-music" loop>
+      <source src="audio/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <main>
+      <section>
+        <h1 class="hero-title-main">Mi cumpleaños LXX - Lucy 🎂</h1>
+        <p class="hero-date-sub">26 de septiembre de 2026</p>
+      </section>
+
+      <section>
+        <h2 class="section-title">Faltan tan solo...</h2>
+        <div class="countdown-container">
+          <div class="time-block">
+            <span class="time-number" id="days">00</span>
+            <span class="time-label">Días</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="hours">00</span>
+            <span class="time-label">Horas</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="minutes">00</span>
+            <span class="time-label">Minutos</span>
+          </div>
+          <div class="time-block">
+            <span class="time-number" id="seconds">00</span>
+            <span class="time-label">Segundos</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="floral-divider">
+        <svg viewBox="0 0 200 40">
+          <path d="M10,20 Q50,5 100,20 Q150,35 190,20 M100,20 Q95,10 100,0 Q105,10 100,20 M100,20 Q95,30 100,40 Q105,30 100,20"/>
+        </svg>
+      </div>
+
+      <section>
+        <p class="intro-quote">
+          "Porque los mejores momentos de la vida se disfrutan rodeados de quienes más queremos."
+        </p>
+
+        <div class="card scroll-reveal">
+          <div class="card-icon">⛪</div>
+          <h3 class="card-title">Misa</h3>
+          <div class="card-time">2:45 PM</div>
+          <p class="card-location">Parroquia Nuestra Señora de Guadalupe</p>
+          <a href="https://maps.app.goo.gl/rWSuRZs636XPnmbK7" target="_blank" class="btn-map">Ver ubicación</a>
+        </div>
+
+        <div class="card scroll-reveal">
+          <div class="card-icon">🎉</div>
+          <h3 class="card-title">Fiesta</h3>
+          <div class="card-time">4:30 PM</div>
+          <p class="card-location">Jardín El Fresno</p>
+          <a href="https://maps.app.goo.gl/Z2CTB3JntszpYYRU9" target="_blank" class="btn-map">Cómo llegar</a>
+        </div>
+      </section>
+
+      <section class="scroll-reveal">
+        <div class="dresscode-card">
+          <div class="card-icon">👗</div>
+          <h2 class="dresscode-tag">Código de Vestimenta</h2>
+          <p class="dresscode-desc">
+            <strong>Tradicional Mexicana</strong><br>
+            Trajes regionales, bordados típicos, guayaberas o prendas formales con detalles artesanales.
+          </p>
+          <p class="dresscode-hint">🔴 <strong>Reservar el color rojo para la festejada</strong></p>
+          <p class="dresscode-hint" style="margin-top: 6px;">✨ ¡Llena de color y tradición esta gran fiesta!</p>
+        </div>
+      </section>
+
+      <div class="floral-divider">
+        <svg viewBox="0 0 200 40">
+          <path d="M10,20 Q50,5 100,20 Q150,35 190,20 M100,20 Q95,10 100,0 Q105,10 100,20 M100,20 Q95,30 100,40 Q105,30 100,20"/>
+        </svg>
+      </div>
+
+      <section class="scroll-reveal">
+        <h2 class="section-title">Nuestros Momentos</h2>
+        <div class="carousel-container">
+          <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide" onclick="openLightbox('https://lh3.googleusercontent.com/d/1pV1TuA49mykKjo3FdKSWyBPbAJVku5I_')">
+              <img class="carousel-slide-bg" src="https://lh3.googleusercontent.com/d/1pV1TuA49mykKjo3FdKSWyBPbAJVku5I_" alt="">
+              <img class="main-img" src="https://lh3.googleusercontent.com/d/1pV1TuA49mykKjo3FdKSWyBPbAJVku5I_" alt="Foto 1 de Luz">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox('https://lh3.googleusercontent.com/d/1tFfq4aVWLNYg-Ql2GHaLCGCUnRG1L7De')">
+              <img class="carousel-slide-bg" src="https://lh3.googleusercontent.com/d/1tFfq4aVWLNYg-Ql2GHaLCGCUnRG1L7De" alt="">
+              <img class="main-img" src="https://lh3.googleusercontent.com/d/1tFfq4aVWLNYg-Ql2GHaLCGCUnRG1L7De" alt="Foto 2 de Luz">
+            </div>
+            <div class="carousel-slide" onclick="openLightbox('https://lh3.googleusercontent.com/d/1_VIqTmda8BKxcbUOTbkaMg5_i27BDHLu')">
+              <img class="carousel-slide-bg" src="https://lh3.googleusercontent.com/d/1_VIqTmda8BKxcbUOTbkaMg5_i27BDHLu" alt="">
+              <img class="main-img" src="https://lh3.googleusercontent.com/d/1_VIqTmda8BKxcbUOTbkaMg5_i27BDHLu" alt="Foto 3 de Luz">
+            </div>
+          </div>
+          <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+        <div class="carousel-dots">
+          <span class="dot active" onclick="setSlide(0)"></span>
+          <span class="dot" onclick="setSlide(1)"></span>
+          <span class="dot" onclick="setSlide(2)"></span>
+        </div>
+      </section>
+
+      <!-- SECCIÓN RSVP Y RECUADRO DE ESTATUS -->
+      <section class="scroll-reveal">
+        <div class="rsvp-card">
+          <h2 class="section-title" style="text-align: center;">Confirmar Asistencia</h2>
+          <form class="rsvp-form" onsubmit="sendWhatsApp(event)">
+            <div class="form-group">
+              <label for="guest-name">Instrucciones: escribe solo el primer nombre y el primer apellido del invitado principal (la persona quien recibio esta invitación), despues haz clic en confirmar asistencia por WhatsApp para recibir tu boleto y el de tus acompañantes.</label>
+              <input type="text" id="guest-name" placeholder="Escribe tu primer nombre y tu primer apellido" autocomplete="off" oninput="checkGuestStatus()" required>
+            </div>
+
+            <!-- RECUADRO DE ESTATUS -->
+            <div id="status-box" class="status-box"></div>
+
+            <button type="submit" id="btn-submit" class="btn-whatsapp">
+              📲 Confirmar asistencia por WhatsApp
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Vista previa de la foto">
+  </div>
+
+  <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbymnFEQJfmL8VAmyZVDA07xbt9aVqbv8N2g2kTyi3hcDPQ0ugJlpj5D_4S8ouqUtj__/exec";
+
+    let listaInvitados = [];
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const p1 = document.getElementById('phrase-1');
+      const p2 = document.getElementById('phrase-2');
+      const hero = document.getElementById('hero-content');
+
+      setTimeout(() => { p1.style.opacity = '1'; }, 400);
+      setTimeout(() => { p1.style.opacity = '0'; }, 2600);
+
+      setTimeout(() => { p2.style.opacity = '1'; }, 3200);
+      setTimeout(() => { p2.style.opacity = '0'; }, 5400);
+
+      setTimeout(() => { 
+        hero.style.opacity = '1'; 
+        hero.style.transform = 'translateY(0)';
+      }, 6000);
+
+      if (SCRIPT_URL && !SCRIPT_URL.includes("PEGA_AQUI")) {
+        fetch(SCRIPT_URL)
+          .then(res => res.json())
+          .then(data => {
+            listaInvitados = data;
+          })
+          .catch(err => console.error("Error al cargar invitados:", err));
+      }
+    });
+
+    // VERIFICACIÓN DEL ESTATUS DE LA PERSONA EN LA LISTA
+    function checkGuestStatus() {
+      const inputVal = document.getElementById('guest-name').value.trim();
+      const statusBox = document.getElementById('status-box');
+
+      if (!inputVal) {
+        statusBox.style.display = 'none';
+        statusBox.className = 'status-box';
+        return;
+      }
+
+      const guestFound = listaInvitados.find(i => i.nombre.trim().toLowerCase() === inputVal.toLowerCase());
+
+      if (guestFound) {
+        const estatus = guestFound.estatus ? guestFound.estatus.toString().trim().toUpperCase() : "PENDIENTE";
+        if (estatus === "CONFIRMADO") {
+          statusBox.innerText = "Ya has confirmado tu asistencia.";
+          statusBox.className = "status-box status-confirmed";
+        } else {
+          statusBox.innerText = "📋 Estatus: PENDIENTE por confirmar";
+          statusBox.className = "status-box status-pending";
+        }
+      } else {
+        statusBox.innerText = "✨ Nuevo registro: Te agregarás a la lista al confirmar";
+        statusBox.className = "status-box status-pending";
+      }
+    }
+
+    function startExperience() {
+      const intro = document.getElementById('intro-screen');
+      intro.style.opacity = '0';
+      setTimeout(() => { intro.style.display = 'none'; }, 1200);
+
+      const audio = document.getElementById('bg-music');
+      audio.play().catch(() => {});
+      document.getElementById('music-text').innerText = "Pausar";
+    }
+
+    function toggleAudio() {
+      const audio = document.getElementById('bg-music');
+      const label = document.getElementById('music-text');
+      if (audio.paused) {
+        audio.play();
+        label.innerText = "Pausar";
+      } else {
+        audio.pause();
+        label.innerText = "Música";
+      }
+    }
+
+    const targetDate = new Date('September 26, 2026 14:45:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const d = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('days').innerText = d < 10 ? '0' + d : d;
+        document.getElementById('hours').innerText = h < 10 ? '0' + h : h;
+        document.getElementById('minutes').innerText = m < 10 ? '0' + m : m;
+        document.getElementById('seconds').innerText = s < 10 ? '0' + s : s;
+      }
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    function addToCalendar() {
+      const title = encodeURIComponent("Cumpleaños N° 70 de Luz ✨");
+      const details = encodeURIComponent("¡Acompáñanos a celebrar los 70 años de nuestra mamá!");
+      const location = encodeURIComponent("Parroquia Nuestra Señora de Guadalupe / Jardín El Fresno");
+      const startDate = "20260926T204500Z";
+      const endDate = "20260927T030000Z";
+      
+      const calendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${startDate}/${endDate}&details=${details}&location=${location}`;
+      window.open(calendarUrl, '_blank');
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+    let currentSlide = 0;
+    const slidesCount = 3;
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    function moveSlide(direction) {
+      currentSlide = (currentSlide + direction + slidesCount) % slidesCount;
+      updateCarousel();
+    }
+
+    function setSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+
+    function openLightbox(url) {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.add('active');
+    }
+    
+    function closeLightbox() {
+      document.getElementById('lightbox-img').src = "";
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    // ENVÍO DE CONFIRMACIÓN CON VALIDACIÓN ANTI-DUPLICADOS
+    function sendWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('guest-name').value.trim();
+      const phoneNumber = "525573428636"; 
+      const statusBox = document.getElementById('status-box');
+
+      if (!name) return;
+
+      // 1. Verificar si el usuario ya ha confirmado previamente
+      const guestFound = listaInvitados.find(i => i.nombre.trim().toLowerCase() === name.toLowerCase());
+
+      if (guestFound && guestFound.estatus && guestFound.estatus.toString().trim().toUpperCase() === "CONFIRMADO") {
+        statusBox.innerText = "Ya has confirmado tu asistencia.";
+        statusBox.className = "status-box status-confirmed";
+        return; // Cancela el envío a WhatsApp, actualización de Google Sheets y envío por correo
+      }
+
+      // 2. Si es un nuevo registro o está pendiente, enviar actualización a Google Sheets
+      if (SCRIPT_URL && !SCRIPT_URL.includes("PEGA_AQUI")) {
+        fetch(SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ nombre: name })
+        }).catch(err => console.error("Error al actualizar la hoja:", err));
+      }
+
+      // Actualizar estado local e interfaz
+      if (guestFound) {
+        guestFound.estatus = "CONFIRMADO";
+      } else {
+        listaInvitados.push({ nombre: name, estatus: "CONFIRMADO" });
+      }
+
+      statusBox.innerText = "Ya has confirmado tu asistencia.";
+      statusBox.className = "status-box status-confirmed";
+
+      // 3. Abrir WhatsApp para enviar el mensaje
+      const message = encodeURIComponent(`¡Hola! Confirmo mi asistencia para el cumpleaños N° 70 de Luz ✨.\n\n👤 Nombre: ${name}`);
+      window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
+    }
+  </script>
+</body>
+</html>
